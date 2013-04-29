@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Example of a list of images</title>
+
+<style>
+body { width: 50%; margin: auto; background: #333; }
+
+#slideshow li { border-width: 10px; border-style: solid; }
+
+.red    { border-color: red; }
+.green  { border-color: green; }
+.blue   { border-color: navy; }
+.yellow { border-color: gold; }
+
+
+/* SLIDES */	
+#slideshow {
+padding: 0;
+margin: 0 0 20px 0;
+width: 660px;
+height: 500px;
+overflow:hidden;
+position: relative;/*for slideshow script*/
+}
+
+#slideshow img {
+width: 640px;
+display:block;
+}
+
+
+
+/* For slideshow script */
+	.slide {
+	position:absolute;
+	left:0;
+	top:0;
+	z-index: 8;
+	}
+	.currentSlide { z-index: 10; }
+	.nextSlide { z-index: 9; }
+</style>
+
+
+</head>
+<body>
+
+<ul id="slideshow">
+	<li class="yellow"><img src="http://thinsoldier.com/wip/berry.jpg"></li>
+	<li class="red"><img src="http://thinsoldier.com/wip/berry2.jpg"></li>
+	<li class="blue"><img src="http://thinsoldier.com/wip/berry3.jpg"></li>
+	<li class="green"><img src="http://thinsoldier.com/wip/berry-turtle.jpg"></li>
+</ul>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="simpleCycle.js"></script>
+
+<script>
+$(window).load( function(){ simpleCycle('#slideshow', 4000, 1000) } );
+</script>
+
+</body>
+</html>
